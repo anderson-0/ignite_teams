@@ -8,8 +8,8 @@ type HighlightProps = {
 export function Highlight({ title, subtitle }: HighlightProps) {
   return (
     <Container>
-      <Title>Highlight</Title>
-      <Subtitle>Subtitle</Subtitle>
+      <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
     </Container>
   );
 }
