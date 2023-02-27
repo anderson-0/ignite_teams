@@ -1,12 +1,13 @@
 import { Header } from '@components/Header';
-import { Container, Title } from './styles';
+import { Highlight } from '@components/Highlight';
+import { Container } from './styles';
 
 
 export function Groups() {
   return (
     <Container>
-      <Header />
-      <Title>Groups</Title>
+      <Header showBackButton />
+      <Highlight title="Highlight" subtitle="Subtitle" />
     </Container>
   );
 }
