@@ -1,6 +1,6 @@
+import { EmptyList } from '@components/EmptyList';
 import { GroupCard } from '@components/GroupCard';
 import { Header } from '@components/Header';
-import { Highlight } from '@components/Highlight';
 import { useState } from 'react';
 import { FlatList } from 'react-native';
 import { Container } from './styles';
@@ -17,8 +17,12 @@ export function Groups() {
         renderItem={({ item }) => (
           <GroupCard title={item} />
         )}
+        contentContainerStyle={groups.length === 0 ? { flex: 1 } : {
+          paddingHorizontal: 24,
+          paddingBottom: 24,
+        }}
         ListEmptyComponent={() => (
-          <Highlight title="Nenhum grupo encontrado" subtitle="Crie um grupo para começar" />
+         <EmptyList title="Nenhuma turma encontrada" message="Que tal cadastrar a primeira turma?"/>
         )}
       />
     </Container>
