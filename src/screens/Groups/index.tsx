@@ -3,13 +3,14 @@ import { EmptyList } from '@components/EmptyList';
 import { GroupCard } from '@components/GroupCard';
 import { Header } from '@components/Header';
 import { useState } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, SafeAreaView } from 'react-native';
 import { Container } from './styles';
 
 
 export function Groups() {
   const [groups, setGroups] = useState([]);
   return (
+    <SafeAreaView>
     <Container>
       <Header showBackButton />
       <FlatList
@@ -28,5 +29,6 @@ export function Groups() {
       />
       <Button title="Cadastrar turma" />
     </Container>
+    </SafeAreaView>
   );
 }
