@@ -5,10 +5,11 @@ import { Highlight } from '@components/Highlight';
 import { Input } from '@components/Input';
 import { useState } from 'react';
 import { FlatList } from 'react-native';
-import { Container, Form, HeaderList } from './styles';
+import { Container, Form, HeaderList, NumPlayers } from './styles';
 
 export function Players() {
   const [team, setTeam] = useState('Team A');
+  const [players, setPlayers] = useState([]);
   return (
     <Container>
       <Header showBackButton />
@@ -31,6 +32,7 @@ export function Players() {
           )}
           horizontal
         />
+        <NumPlayers>{players.length}</NumPlayers>
       </HeaderList>
     </Container>
   );
