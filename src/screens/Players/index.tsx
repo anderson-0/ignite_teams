@@ -1,3 +1,4 @@
+import { Button } from '@components/Button';
 import { ButtonIcon } from '@components/ButtonIcon';
 import { EmptyList } from '@components/EmptyList';
 import { Filter } from '@components/Filter';
@@ -43,8 +44,13 @@ export function Players() {
           <PlayerCard name={item} onRemove={()=>{}} />
         )}
         ListEmptyComponent={() => <EmptyList message='Não há pessoas no time'/>}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={[
+          { paddingBottom: 20 },
+          players.length === 0 && { flex: 1 }
+        ]}
       />
-
+      <Button title='Remover turma' type='SECONDARY'/>
     </Container>
   );
 }
